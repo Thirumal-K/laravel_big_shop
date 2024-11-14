@@ -3,7 +3,7 @@
 namespace App\Enums;
 
 enum CategoryStatus: string{
-    case PUBLIC = 'PUBLIC';
+    case PUBLISH = 'PUBLISH';
     case DRAFT = 'DRAFT';
     case PENDING = 'PENDING';
 
