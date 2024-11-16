@@ -49,7 +49,7 @@ class CategoryResource extends Resource
                     ->numeric(),
                 Forms\Components\Select::make('status')
                     ->options(CategoryStatus::Class)
-                    ->default(CatagoryStatus::PUBLISH),
+                    // ->default(CatagoryStatus::PUBLISH),
             ]);
     }
 
@@ -91,10 +91,10 @@ class CategoryResource extends Resource
                         CategoryStatus::DRAFT->value => 'warning',                        
                         CategoryStatus::PENDING->value => 'danger',
                     }),
-                Tables\Columns\TextColukmn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                // Tables\Columns\TextColukmn::make('created_at')
+                //     ->dateTime()
+                //     ->sortable()
+                //     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
