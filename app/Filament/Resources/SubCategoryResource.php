@@ -66,8 +66,8 @@ class SubCategoryResource extends Resource
                     ->numeric()
                     ->default(null),
                 Forms\Components\TextInput::make('status')
-                    ->options(SubCategoryStatus::class)
-                    ->default,(SubCategoryStatus::PUBLISH),
+                    // ->options(SubCategoryStatus::class)
+                    // ->default,(SubCategoryStatus::PUBLISH),
             ]);
     }
 
@@ -76,7 +76,7 @@ class SubCategoryResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
-                    ->lable('SubCategory')
+                    // ->lable('SubCategory')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('description')
                     ->searchable()
