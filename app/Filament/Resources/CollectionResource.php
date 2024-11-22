@@ -28,7 +28,7 @@ class CollectionResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('status')
+                Forms\Components\Select::make('status')
                     ->options(CollectionStatus::class)
                     ->default(CollectionStatus::PUBLISH),
                 Forms\Components\ColorPicker::make('color')
