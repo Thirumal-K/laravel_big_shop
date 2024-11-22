@@ -27,8 +27,7 @@ class BrandResource extends Resource
                     ->required()
                     ->maxLength(255),
                 Forms\Components\FileUpload::make('image_path')
-                    ->image()
-                    ->required(),
+                    ->default('no_image_available.jpg'),
             ]);
     }
 
@@ -38,7 +37,8 @@ class BrandResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
-                Tables\Columns\ImageColumn::make('image_path'),
+                Tables\Columns\ImageColumn::make('image_path')
+                    ->getStateUsing(fn (Brand $record): string=> $record->GetLogoImage()),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -75,5 +75,9 @@ class BrandResource extends Resource
             'create' => Pages\CreateBrand::route('/create'),
             'edit' => Pages\EditBrand::route('/{record}/edit'),
         ];
+    }
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::count();
     }
 }
