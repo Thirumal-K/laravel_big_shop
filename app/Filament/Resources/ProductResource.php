@@ -56,8 +56,8 @@ class ProductResource extends Resource
                     ->relationship('productTag', 'name'),
                     // ->required(),
                 Forms\Components\CheckboxList::make('product_collection_id')
-                    // ->multiple()
-                    // ->preload()                
+                    ->multiple()
+                    ->preload()                
                     ->relationship('productCollection', 'name'),
                     // ->required(), 
                 Forms\Components\TextInput::make('qty')
