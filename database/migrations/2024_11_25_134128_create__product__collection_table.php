@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('_product__collection', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBiInteger('product_id');
-            $table->unsignedBigInteger('collection-id');
+            $table->unsignedBigInteger('product_id');
+            $table->unsignedBigInteger('collection_id');
             $table->timestamps();
         });
     }
